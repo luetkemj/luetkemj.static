@@ -469,35 +469,39 @@ TOOLS
 }
 
 /* line 27, ../scss/_mixins.scss */
+.cf, .header, .header__inner,
 .clearfix {
   zoom: 1;
 }
 /* line 24, ../scss/_mixins.scss */
-.clearfix:before, .clearfix:after {
+.cf:before, .header:before, .header__inner:before, .cf:after, .header:after, .header__inner:after,
+.clearfix:before,
+.clearfix:after {
   content: "";
   display: table;
 }
 /* line 25, ../scss/_mixins.scss */
+.cf:after, .header:after, .header__inner:after,
 .clearfix:after {
   clear: both;
 }
 
-/* line 30, ../scss/_mixins.scss */
+/* line 31, ../scss/_mixins.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 31, ../scss/_mixins.scss */
+/* line 32, ../scss/_mixins.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 32, ../scss/_mixins.scss */
+/* line 33, ../scss/_mixins.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 35, ../scss/_mixins.scss */
+/* line 36, ../scss/_mixins.scss */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -507,7 +511,7 @@ TOOLS
   width: 100%;
   margin-bottom: 1em;
 }
-/* line 43, ../scss/_mixins.scss */
+/* line 44, ../scss/_mixins.scss */
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -523,7 +527,7 @@ Author:
 Stylesheet: Base Stylesheet
 
 ******************************************************************/
-/* line 17, ../scss/_base.scss */
+/* line 23, ../scss/_base.scss */
 #main {
   max-width: 1200px;
   margin-left: auto;
@@ -550,17 +554,105 @@ Author:
 Stylesheet: Header Stylesheet
 
 ******************************************************************/
-/* line 12, ../scss/modules/_header.scss */
+/* line 9, ../scss/modules/_header.scss */
+.swatches .swatch {
+  width: 16.66666666666%;
+  height: 5px;
+  float: left;
+}
+/* line 14, ../scss/modules/_header.scss */
+.swatches .swatch.one {
+  background: #33bbec;
+}
+/* line 17, ../scss/modules/_header.scss */
+.swatches .swatch.two {
+  background: #ef433e;
+}
+/* line 20, ../scss/modules/_header.scss */
+.swatches .swatch.three {
+  background: #4db748;
+}
+/* line 23, ../scss/modules/_header.scss */
+.swatches .swatch.four {
+  background: #ef589f;
+}
+/* line 26, ../scss/modules/_header.scss */
+.swatches .swatch.five {
+  background: #999a9a;
+}
+/* line 29, ../scss/modules/_header.scss */
+.swatches .swatch.six {
+  background: #636363;
+}
+
+/* line 36, ../scss/modules/_header.scss */
+.social ul {
+  margin: 2% 2% 0 0;
+  margin-top: calc(2% + 5px);
+  width: 40%;
+  position: absolute;
+  right: 0;
+  list-style-type: none;
+  font-size: 1.5em;
+  text-align: right;
+}
+/* line 46, ../scss/modules/_header.scss */
+.social ul li {
+  display: inline;
+}
+/* line 50, ../scss/modules/_header.scss */
+.social ul a {
+  color: #636363;
+}
+/* line 54, ../scss/modules/_header.scss */
+.social ul a:hover .fa-github {
+  color: #171515;
+}
+/* line 57, ../scss/modules/_header.scss */
+.social ul a:hover .fa-instagram {
+  color: #3F729B;
+}
+
+/* line 66, ../scss/modules/_header.scss */
+.header {
+  padding-top: 1em;
+  margin-bottom: 2em;
+}
+/* line 72, ../scss/modules/_header.scss */
+.header a {
+  color: #000000;
+  text-decoration: none;
+}
+/* line 76, ../scss/modules/_header.scss */
+.header a:hover {
+  color: #33bbec;
+}
+/* line 81, ../scss/modules/_header.scss */
 .header__inner {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  font-family: Lobster, Futura, "Trebuchet MS", Arial, sans-serif;
+  text-align: center;
 }
 /* line 12, ../../../../.rvm/gems/ruby-2.0.0-p247/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
 .header__inner:after {
   content: " ";
   display: block;
   clear: both;
+}
+/* line 87, ../scss/modules/_header.scss */
+.header__inner__title {
+  margin: 0 0 0 0;
+  font-size: 2.25em;
+}
+/* line 92, ../scss/modules/_header.scss */
+.header__inner__subtitle {
+  font-size: .75em;
+  margin: 0 0 0 0;
+  position: relative;
+  left: 3px;
+  top: -6px;
 }
 
 /******************************************************************
@@ -570,15 +662,32 @@ Author:
 Stylesheet: Navigation Stylesheet
 
 ******************************************************************/
-@media (min-width: 1025px) {
-  /* line 13, ../scss/modules/_nav.scss */
-  .nav ul > li {
-    display: inline-block;
-  }
+/* line 9, ../scss/modules/_nav.scss */
+.nav {
+  font-family: Ubuntu, "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: .75em;
+}
+/* line 15, ../scss/modules/_nav.scss */
+.nav ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+/* line 22, ../scss/modules/_nav.scss */
+.nav ul > li {
+  display: inline-block;
+  margin-right: 1em;
+  padding: 1em 0;
+}
+/* line 27, ../scss/modules/_nav.scss */
+.nav ul > li:last-child {
+  margin-right: 0;
 }
 
 @media (min-width: 1025px) {
-  /* line 40, ../scss/modules/_nav.scss */
+  /* line 56, ../scss/modules/_nav.scss */
   #mobile-nav-button {
     display: none;
   }
@@ -600,8 +709,8 @@ Stylesheet: Footer Stylesheet
 ******************************************************************/
 /* line 9, ../scss/modules/_footer.scss */
 .footer {
-  background: #333;
-  color: #fff;
+  background: #000000;
+  color: #FFFFFF;
 }
 /* line 14, ../scss/modules/_footer.scss */
 .footer__inner {

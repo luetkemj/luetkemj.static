@@ -11,10 +11,16 @@ Stylesheet: Color Constants
 COLORS
 *********************/
 
-$black:  #333;
-$grey:   #999;
-$white:  #fff;
+// colors
+$swatch1: #33bbec; //blue
+$swatch2: #ef433e; //red
+$swatch3: #4db748; //green
+$swatch4: #ef589f; //pink
+$swatch5: #999a9a; //lt-gray
+$swatch6: #636363; //dk-gray
 
+$black:   #000000;
+$white:   #FFFFFF;
 
 // used in normalize typography
 $background: $white;

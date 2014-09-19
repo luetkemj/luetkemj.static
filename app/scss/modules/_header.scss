@@ -5,18 +5,97 @@ Author:
 Stylesheet: Header Stylesheet
 
 ******************************************************************/
+.swatches{
+	.swatch{
+		width: 16.66666666666%;
+		height: 5px;
+		float: left;
+
+		&.one{
+		  background: $swatch1;
+		}
+		&.two{
+		  background: $swatch2;
+		}
+		&.three{
+		  background: $swatch3;	
+		}
+		&.four{
+		  background: $swatch4;	
+		}
+		&.five{
+		  background: $swatch5;	
+		}
+		&.six{
+		  background: $swatch6;	
+		}
+	}
+}
+
+.social{
+	ul{
+		margin: 2% 2% 0 0;
+		margin-top: calc(2% + 5px);
+		width: 40%;
+		position: absolute;
+		right: 0;
+		list-style-type: none;
+		font-size: 1.5em;
+		text-align: right;
+
+		li{
+			display: inline;
+		}
+
+		a{
+			color: $swatch6;
+			
+			&:hover{
+				& .fa-github{
+				 color: $github;
+			    }
+			    & .fa-instagram{
+				 color: $instagram;
+			    }
+			}
+		}
+	}
+}
 
 
 .header {
 
-	&__inner {
-		@include container($wrapper-width);
-	}
+	@extend .cf;
+	padding-top: 1em;
+	margin-bottom: 2em;
 
-	@at-root .site-title {
+	a{
+		color: $black;
+		text-decoration: none;
 
-		a {
-
+		&:hover{
+			color: $swatch1;
 		}
 	}
+
+	&__inner {
+		@include container($wrapper-width);
+		@extend .cf;
+		font-family: $serif;
+		text-align: center;
+		
+		&__title{
+			margin: 0 0 0 0;
+			font-size: 2.25em;
+		}
+
+		&__subtitle{
+			font-size: .75em;
+			margin: 0 0 0 0; 
+			position: relative;
+			left: 3px;
+			top: -6px;
+		}
+	}
+
 }
